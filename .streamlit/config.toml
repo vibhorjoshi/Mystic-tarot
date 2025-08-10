@@ -1,0 +1,128 @@
+# .streamlit/config.toml
+# Streamlit configuration file for AI Tarot App
+
+[global]
+# Development mode (set to false for production)
+developmentMode = false
+
+# Data directory for storing app data
+dataDir = "~/.streamlit"
+
+# Sharing mode
+sharingMode = "off"
+
+# Show error details
+showErrorDetails = true
+
+[logger]
+# Logging level
+level = "info"
+
+# Enable logging to console
+enableLogging = true
+
+[client]
+# Show error details in production
+showErrorDetails = false
+
+# Toolbar mode
+toolbarMode = "minimal"
+
+# Show running indicator
+showRunOnSave = false
+
+[runner]
+# Magic commands
+magicEnabled = true
+
+# Install Tracer
+installTracer = false
+
+# Fix Matplotlib
+fixMatplotlib = true
+
+# Post Script GC
+postScriptGC = true
+
+# Fast Reruns
+fastReruns = true
+
+# Enforce Serializable Session State
+enforceSerializableSessionState = false
+
+[server]
+# Server settings for production deployment
+headless = true
+port = 8501
+address = "0.0.0.0"
+
+# Enable CORS (set to false for production security)
+enableCORS = false
+
+# Enable XSRF Protection
+enableXsrfProtection = false
+
+# Enable static file serving
+enableStaticServing = true
+
+# File watcher type
+fileWatcherType = "auto"
+
+# Cookie secret (will be auto-generated if not set)
+# cookieSecret = "your-secret-key-here"
+
+# Max upload size (200MB)
+maxUploadSize = 200
+
+# Max message size (200MB)
+maxMessageSize = 200
+
+# Enable WebSocket compression
+enableWebsocketCompression = true
+
+[browser]
+# Browser settings
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[mapbox]
+# Mapbox token (not needed for tarot app)
+# token = ""
+
+[deprecation]
+# Deprecation warnings
+showfileUploaderEncoding = false
+showImageFormat = false
+showPyplotGlobalUse = false
+
+[theme]
+# AI Tarot App Custom Theme - Mystical Purple & Gold
+primaryColor = "#fbbf24"           # Golden yellow for buttons and accents
+backgroundColor = "#1e1b4b"        # Deep purple background  
+secondaryBackgroundColor = "#312e81" # Darker purple for sidebars/containers
+textColor = "#ffffff"              # White text for contrast
+font = "sans serif"                # Clean, readable font
+
+# Alternative theme options (uncomment to use):
+# 
+# # Dark mystical theme:
+# primaryColor = "#a855f7"           # Purple primary
+# backgroundColor = "#0f0f23"        # Very dark background
+# secondaryBackgroundColor = "#1e1b4b" # Dark purple secondary
+# textColor = "#e5e7eb"              # Light gray text
+#
+# # Light mystical theme:
+# primaryColor = "#7c3aed"           # Purple primary
+# backgroundColor = "#f8fafc"        # Light background
+# secondaryBackgroundColor = "#e2e8f0" # Light gray secondary
+# textColor = "#1f2937"              # Dark text
+
+[ui]
+# Hide default Streamlit elements for cleaner look
+hideTopBar = false
+hideSidebarNav = false
+
+[experimental]
+# Experimental features
+singleton = true
