@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-mystical-gradient text-white font-sans;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .mystical-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 shadow-2xl;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  }
+
+  .mystical-button {
+    @apply bg-gradient-to-r from-mystical-500 to-mystical-600 hover:from-mystical-600 hover:to-mystical-700 
+           text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 
+           shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95;
+  }
+
+  .mystical-input {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-3 
+           text-white placeholder-white/60 focus:outline-none focus:ring-2 
+           focus:ring-mystical-400 focus:border-transparent transition-all duration-300;
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-flip {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .card-flip.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  .mystical-glow {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+  }
+
+  .cosmic-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .mystical-text {
+    background: linear-gradient(45deg, #fbbf24, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 2.5s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
+  }
+
+  .backdrop-blur-custom {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #a855f7, #7c3aed);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #9333ea, #6b21a8);
+}
+
+/* Loading animations */
+.loading-spinner {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #fbbf24;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mystical background animation */
+.mystical-background {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+  animation: mystical-bg 20s ease-in-out infinite;
+}
+
+/* Card shuffle animation */
+.card-shuffle {
+  animation: card-shuffle 0.8s ease-in-out;
+}
+
+/* Floating animation */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow animation */
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
